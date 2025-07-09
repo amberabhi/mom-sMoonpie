@@ -1,5 +1,10 @@
-# Use PHP with Apache
 FROM php:8.2-apache
+
+# Install system dependencies and PHP extensions
+RUN apt-get update && apt-get install -y \
+    git unzip curl libzip-dev libonig-dev libpng-dev libpq-dev \
+    libxml2-dev zip && \
+    docker-php-ext-install pdo pdo_mysql mysqli
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
@@ -7,25 +12,20 @@ RUN a2enmod rewrite
 # Set working directory
 WORKDIR /var/www/html
 
-# Install system dependencies and PHP extensions
-RUN apt-get update && apt-get install -y \
-    git \
-    unzip \
-    libzip-dev \
-    zip \
-    && docker-php-ext-install zip pdo pdo_mysql
+# Copy Laravel app files
+COPY . .
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy Laravel project files
-COPY . .
+# Install Laravel dependencies
+RUN composer install --optimize-autoloader --no-dev
 
-# Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader
+# Laravel permission fix
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www/html/storage
+# Expose port Render expects
+EXPOSE 10000
 
-# Expose port
-EXPOSE 80
+# Start Laravel via PHP built-in server on the correct port
+CMD php artisan serve --host=0.0.0.0 --port=10000
