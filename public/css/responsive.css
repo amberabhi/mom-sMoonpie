@@ -1,0 +1,199 @@
+@media only screen and (width > 1920px) {}
+
+@media (1200px <=width <=1399px) {}
+
+@media screen and (width <=1199px) {
+    header .navbar-brand {
+        max-width: 150px;
+    }
+    .header-top-left form input {
+        min-width: 300px;
+    }
+    header .navbar .navbar-collapse {
+        min-height: 55px;
+    }
+    header .navbar .navbar-nav {
+        gap: 20px;
+    }
+    .header-top-left {
+        padding-block: 15px;
+    }
+}
+
+@media screen and (width <=991px) {
+    header .navbar .navbar-nav {
+        gap: 15px;
+    }
+    header .navbar .navbar-collapse {
+        padding-block: 20px;
+    }
+    header .navbar-brand {
+        max-width: 120px;
+        position: initial;
+        background-color: transparent;
+        border-radius: 0;
+        padding: 10px;
+    }
+    .header-top .container {
+        justify-content: space-between;
+    }
+    .header-top-left {
+        flex-wrap: wrap;
+        width: calc(100% - 160px);
+        justify-content: flex-end;
+        gap: 15px 30px;
+        padding-block: 0;
+    }
+    .header-top-left form input {
+        padding: 10px 55px 10px 25px;
+    }
+    .header-top-left form button {
+        right: 3px;
+        width: 35px;
+        height: 35px;
+    }
+    .header-top-left form button img {
+        width: 14px;
+    }
+    .navbar-toggler {
+        border-color: var(--white-color);
+        padding-inline: 6px;
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    .banner-image {
+        max-width: 500px;
+    }
+    .banner-data {
+        max-width: 600px;
+        margin: 0 auto 40px;
+        text-align: center;
+    }
+    .banner-ele-1 {
+        left: 2%;
+        top: 3%;
+    }
+    .banner-ele-3 {
+        right: 2%;
+        top: 3%;
+    }
+    .banner-section .splide__pagination {
+        gap: 15px;
+        bottom: 20px;
+    }
+    .shop-card-3 .banner-ele-1 {
+        display: none;
+    }
+    .shop-data .comn-title-text {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .shop-data .comn-btn {
+        font-size: 12px;
+    }
+    .new-grid {
+        --newWidth: 220px;
+    }
+    .footer-top-row {
+        gap: 30px;
+    }
+    .footer-top-card {
+        padding-right: 30px;
+    }
+    .comn-padding {
+        padding-block: 80px;
+    }
+}
+
+@media screen and (width <=767px) {
+    .comn-padding {
+        padding-block: 60px;
+    }
+    .comn-title {
+        margin-bottom: 30px;
+    }
+    .shop-data .comn-title-text {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (width <=575px) {
+    .comn-padding {
+        padding-block: 40px;
+    }
+    .header-top-left form input {
+        min-width: 150px;
+    }
+    .header-top-list {
+        gap: 10px;
+    }
+    .header-top-list li:not(:last-child) {
+        padding-right: 10px;
+    }
+    .header-top-list li a img {
+        max-width: 10px;
+    }
+    .header-top-list li a {
+        font-size: 10px;
+    }
+    .header-top .container {
+        padding: 10px;
+    }
+    .navbar-toggler {
+        transform: scale(0.7);
+    }
+    header .navbar-brand {
+        max-width: 100px;
+    }
+    .banner-image-ele {
+        display: none;
+    }
+    .splide__arrows_top {
+        position: initial;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .shop-grid {
+        grid-template-columns: 1fr;
+    }
+    .shop-card-3 {
+        grid-row: initial;
+        grid-column: initial;
+    }
+    .shop-card-3 .shop-image img {
+        aspect-ratio: 1;
+    }
+    .new-grid {
+        --newWidth: 140px;
+    }
+    .star-row {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+    .new-title {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    .new-price-text {
+        font-size: 14px;
+    }
+    .customers-card {
+        padding: 30px;
+    }
+    .footer-top-card {
+        padding-right: 0;
+        border-right: 0;
+        flex-basis: 120px;
+    }
+    .footer-middle {
+        padding-block: 50px 30px;
+    }
+    .footer-bottom {
+        justify-content: center;
+    }
+    .banner-data h1 {
+        font-size: 40px;
+    }
+}
