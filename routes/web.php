@@ -1,7 +1,5 @@
-<?php
+use Illuminate\Support\Facades\Route;
 
-require __DIR__.'/auth.php';
-
-require_once 'admin-routes.php';
-
-require_once 'front-routes.php';
+Route::get('/', function () {
+    return '✅ Laravel is working on Render!';
+});
