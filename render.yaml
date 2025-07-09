@@ -1,9 +1,13 @@
 services:
   - type: web
-    name: laravel-app
+    name: moms-moonpie
     env: docker
     plan: free
+    region: oregon
     dockerfilePath: ./Dockerfile
-    branch: main
-    rootDir: .
     healthCheckPath: /
+    autoDeploy: true
+    buildFilter:
+      paths:
+        - Dockerfile
+        - ./
