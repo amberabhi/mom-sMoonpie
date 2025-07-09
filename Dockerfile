@@ -24,8 +24,11 @@ RUN composer install --optimize-autoloader --no-dev
 # Set correct permissions
 RUN chown -R www-data:www-data storage bootstrap/cache
 
-# EXPOSE default Apache port (not 10000)
-EXPOSE 80
+# ⚠️ Change Apache port from 80 to 10000
+RUN sed -i 's/80/10000/g' /etc/apache2/ports.conf /etc/apache2/sites-enabled/000-default.conf
 
-# Use Apache to serve (not php artisan serve)
+# Expose port 10000 (not 80)
+EXPOSE 10000
+
+# Start Apache
 CMD ["apache2-foreground"]
